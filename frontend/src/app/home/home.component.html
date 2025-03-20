@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>CalorieCalculator</title>
+</head>
+<body>
+
+  <div class="main_box">
+    <input type="checkbox" id="check">
+    <div class="btn_one">
+      <label for="check">
+        <i class="fa fa-bars"></i>
+      </label>
+    </div>
+    <div class="sidebar_menu">
+      <div class="logo">
+        <a href="#">Kalória Kalkulátor</a>
+      </div>
+      <div class="btn_two">
+        <label for="check">
+          <i class="fa fa-times"></i>
+        </label>
+      </div>
+      <div class="menu3">
+        <ul>
+          <li *ngIf="!isLoggedIn;"><a href="/login" (click)="login()"><i class="bi bi-box-arrow-in-right"></i> Bejelentkezés</a></li>
+          <li *ngIf="isLoggedIn;"><a href="/login" (click)="logout()"><i class="bi bi-box-arrow-in-right"></i> Kijelentkezés</a></li>          
+          <li><a href="/home"><i class="bi-house-door "></i> Főoldal</a></li>
+          <hr style="border: solid 1px #fff;">
+          <li><a href="/about"><i class="bi bi-file-earmark-person-fill"></i> Rólunk</a></li>
+          <hr style="border: solid 1px #fff;">
+          <li><a href="#about"><i class="bi bi-check2-circle"></i> Szolgáltatások</a></li>
+          <hr style="border: solid 1px #fff;">
+          <li>
+            <a href="#" (click)="openModal($event)">
+              <i class="bi bi-calculator"></i> Kalkulátor
+            </a>
+          </li>
+          <hr style="border: solid 1px #fff;">
+          <li><a href="#footer"><i class="bi bi-telephone-forward"></i> Kapcsolat</a></li>
+    </ul>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+
+    <div class="header-content">
+        <h1 class="focim">Kalória Kalkulátor </h1>
+        <p class="alcim">Segítünk étrended összeállításában</p>
+    </div>
+    <nav class="nav">
+        <ul>
+            <li *ngIf="!isLoggedIn;"><a href="/login" (click)="login()"><i class="bi bi-box-arrow-in-right"></i> Bejelentkezés</a></li>
+            <li *ngIf="isLoggedIn;"><a href="/login" (click)="logout()"><i class="bi bi-box-arrow-in-right"></i> Kijelentkezés</a></li>          
+            <li><a href="/home"><i class="bi-house-door "></i> Főoldal</a></li>
+            <li><a href="/about"><i class="bi bi-file-earmark-person-fill"></i> Rólunk</a></li>
+            <li><a href="#about"><i class="bi bi-check2-circle"></i> Szolgáltatások</a></li>
+            <li>
+              <a href="/calculator" (click)="openModal($event)">
+                <i class="bi bi-calculator"></i> Kalkulátor
+              </a>
+            </li>
+            <li><a href="#footer"><i class="bi bi-telephone-forward"></i> Kapcsolat</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<main id="about">
+
+    <h2 class="szolgaltatasFocim">Lorem ipsum dolor sit amet consectetur.</h2>
+    <p class="szolgaltatasAlcim">Lorem ipsum dolor sit.</p>
+    
+    <div class="kartyak">
+        <div class="row">
+            <div class="card m-4" style="width: 18rem;     background-color: rgb(15, 14, 14); color: white; text-align: center; border-style: none;">
+                <div class="card-body">
+                  <h5 class="card-title"><i class="bi bi-basket ikonok" style="font-size: 70px;"></i></h5>
+                  <br>
+                  <p class="card-text" style="font-size: 20px;">Étrend összeállítás</p>
+                  <p class="card-text" style="color: rgb(102, 95, 95);">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+              
+              <div class="card m-4" style="width: 18rem;     background-color: rgb(15, 14, 14); color: white; text-align: center; border-style: none;">
+                <div class="card-body">
+                  <h5 class="card-title"><i class="bi bi-piggy-bank-fill ikonok" style="font-size: 70px;"></i></h5>
+                  <br>
+                  <p class="card-text" style="font-size: 20px;">Kalória kiszámítás</p>
+                  <p class="card-text" style="color: rgb(102, 95, 95);">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+        
+              <div class="card m-4" style="width: 18rem;     background-color: rgb(15, 14, 14); color: white; text-align: center; border-style: none;">
+                <div class="card-body">
+                  <h5 class="card-title"><i class="bi bi-question-circle-fill ikonok" style="font-size: 70px;"></i></h5>
+                  <br>
+                  <p class="card-text" style="font-size: 20px;">Egészséges étkezés</p>
+                  <p class="card-text" style="color: rgb(102, 95, 95);">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+
+        </div>
+    </div>
+  
+</main>
+<footer id="footer">
+  <hr style="border: solid 1px white;">
+    <h2 class="lablecFocim"><b>Kapcsolat</b></h2>
+    <div class="kapcsolat">
+        <div class="m-3">
+            <p><i class="bi bi-envelope" style="font-size: 20px;"></i><b> E-mail</b></p>
+            <p><i>Üzenet küldése</i></p>
+            <p><b>caloriecalculator&#64;gmail.com</b></p>
+        </div>
+
+        <div class="m-3">
+            <p><i class="bi bi-phone" style="font-size: 20px;"></i><b> Telefonszám</b></p>
+            <p><i>Hívj bennünket</i></p>
+            <p><b>06203458941</b></p>
+        </div>
+
+        <div class="m-3">
+            <p><i class="bi bi-geo-alt-fill" style="font-size: 20px;"></i><b> Cím</b></p>
+            <p><i>Látogass meg</i></p>
+            <p><b>3600 Ózd, 48-as út 6.</b></p>
+            
+        </div>
+        
+        <div class="google-map m-3">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2658.6197637071577!2d20.29266427668707!3d48.21393944584148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473f8097a7020b6d%3A0xb565206106319607!2zw5N6ZCwgNDgtYXMgw7p0IDYsIDM2MDA!5e0!3m2!1shu!2shu!4v1739361717006!5m2!1shu!2shu" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+    </div>
+
+</footer>
+
+</body>
+</html>

@@ -168,6 +168,6 @@ INSERT INTO etel_koret_kapcsolatok VALUES
     (31, 1);
 
 INSERT INTO etkezesiNaplok VALUES
-    (1, default, 3, 11, 3, default),
-    (2, default, 1, 17, 2, default),
-    (3, "pecek", 2, 2, 1, default);
+    (1, default, 3, 11, 3, default, 0, 0, 0, 0),
+    (2, default, 1, 17, 2, default, 0, 0, 0, 0),
+    (3, "pecek", 2, 2, 1, default, 0, 0, 0, 0);

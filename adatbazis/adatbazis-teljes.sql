@@ -70,6 +70,10 @@ CREATE TABLE etkezesiNaplok(
     etelForeignID int,
     koretForeignID int,
     naplozasiDatum date DEFAULT CURRENT_TIMESTAMP,
+    etkezesKaloria float,
+    etkezesFeherje float,
+    etkezesZsir float,
+    etkezesSzenhidrat float,
     CONSTRAINT pk_NaplozasiKulcs PRIMARY KEY (naploID),
     CONSTRAINT fk_FelhasznaloKulsoKulcs FOREIGN KEY (felhasznaloForeignID) REFERENCES regisztraciok(regisztracioID),
     CONSTRAINT fk_EtelKulsoKulcs FOREIGN KEY (etelForeignID) REFERENCES etel_koret_kapcsolatok(EK_etelKulsoID),
@@ -251,6 +255,6 @@ INSERT INTO regisztraciok VALUES
     (3, "robi@test.com", "RobiBelep", "Robi", 65, 175, 18);
 
 INSERT INTO etkezesiNaplok VALUES
-    (1, default, 3, 11, 3, default),
-    (2, default, 1, 17, 2, default),
-    (3, "pecek", 2, 2, 1, default);
+    (1, default, 3, 11, 3, default, 0, 0, 0, 0),
+    (2, default, 1, 17, 2, default, 0, 0, 0, 0),
+    (3, "pecek", 2, 2, 1, default, 0, 0, 0, 0);
